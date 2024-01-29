@@ -10,6 +10,7 @@ import Dynamic from './Dynamic';
 import Error from '../Component/Error';
 import "./style.css"
 import Footer from '../Component/Footer';
+import ContextApi from '../CantextData/Data';
 // import { CgMenu } from "react-icons/cg";
 // import { CgClose } from "react-icons/cg";
 
@@ -91,6 +92,8 @@ const RouterCompo = () => {
         <CgClose  name='close-outline' className='mobile-nav-icon close-outline'/>
         */}
 
+<ContextApi>
+
         <Routes>
            <Route path='/' element={<Home/>}/>
            <Route path='/store' element={<StoreCp/>}/>
@@ -103,6 +106,7 @@ const RouterCompo = () => {
 
 
         </Routes>
+</ContextApi>
         <Footer/>
         
         </BrowserRouter>
