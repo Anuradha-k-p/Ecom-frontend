@@ -1,182 +1,119 @@
-import styled from "styled-components";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../Redux/Slicing";
+// import "./Cart.css"
+import {loadStripe} from "@stripe/stripe-js"
+
+
 
 const Cart = () => {
-  return <Wrapper></Wrapper>;
+  
+  const dispatch = useDispatch();
+  
+  const data = useSelector((state) => state.Cart.cart);
+
+  const total = data.reduce((cur, item) => {
+    return (cur) +item.price *(item.quantity);
+  }, 0);
+const makePayment=async ()=>{
+  
+    const stripe =await loadStripe("pk_test_51OFIp6SASTZsWUYjTKRxcD4xTAidUAj7os1f9uqt5pfPPcWFOaV5pmYsZVUUbpkehNtOXKX8vwRwVLdmUZfTWMfM00o8bJqo5J")
+  
+    const body ={
+      products:data
+    }
+    console.log(body)
+    const headers={
+      "Content-Type":"application/json"
+    }
+    const response = await fetch("https://ecommerce-backend-new.onrender.com/checkout",{
+            method:"POST",
+            headers:headers,
+            body:JSON.stringify(body)
+    })
+    const session= await response.json();
+  
+    const result =stripe.redirectToCheckout({
+      sessionId:session.id
+    })
+    if(result.error){
+      console.log(result.error)
+    
+   }
+}
+
+
+  const handleIncreaseQuantity = (id) => {
+    dispatch(IncreaseQuantity({ id }));
+  };
+  const handleDecreaseQuantity = (id) => {
+    dispatch(DecreaseQuantity({ id }));
+  };
+
+  return (
+    <div>
+      <h2 className="headcart">Cart</h2>
+
+      <div className="cart-content">
+        <div className="headOfcart">
+          <h4>Product</h4>
+          <h4>Title</h4>
+          <h4>Price and Quantity</h4>
+        </div>
+
+        <div>
+          {data &&
+            data.map((item, index) => {
+
+              return (
+                <div className="content-cart" key={index}>
+                  <img src={item.image} alt="Loading..." />
+                  <div className="cart-subcontent">
+                    <h2>{item.model} {item.product}</h2>
+                    <button
+                      className="remove-cart"
+                      onClick={() => dispatch(RemoveItem({ id: item.id }))}
+                    >
+                      Remove item
+                    </button>
+                  </div>
+                  <h2 className="cartprice">
+                 
+                    {"₹ " + item.price *item.quantity}
+                  </h2>
+                  <div>
+                    <button
+                      className="quantity-btn"
+                      onClick={() => handleDecreaseQuantity(item.id)}
+                    >
+                      -
+                    </button>
+                    <span className="quantity">{item.quantity}</span>
+                    <button
+                      className="quantity-btn"
+                      onClick={() => handleIncreaseQuantity(item.id)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+
+        <div className="total">
+          <h2>Total : </h2>
+          <h1 style={{ color: "black", fontSize:"28px" }}>{total}</h1>
+        </div>
+
+        <div className="buy">
+        {/* <NavLink to="/success" state={data}> */}
+          <button onClick={makePayment}>Buy Now</button>
+          {/* </NavLink> */}
+        </div>
+      </div>
+    </div>
+  );
 };
-
-const Wrapper = styled.section`
-  padding: 9rem 0;
-
-  .grid-four-column {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .grid-five-column {
-    grid-template-columns: repeat(4, 1fr) 0.3fr;
-    text-align: center;
-    align-items: center;
-  }
-  .cart-heading {
-    text-align: center;
-    text-transform: uppercase;
-  }
-  hr {
-    margin-top: 1rem;
-  }
-  .cart-item {
-    padding: 3.2rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3.2rem;
-  }
-
-  .cart-user--profile {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.2rem;
-    margin-bottom: 5.4rem;
-
-    img {
-      width: 8rem;
-      height: 8rem;
-      border-radius: 50%;
-    }
-    h2 {
-      font-size: 2.4rem;
-    }
-  }
-  .cart-user--name {
-    text-transform: capitalize;
-  }
-  .cart-image--name {
-    /* background-color: red; */
-    align-items: center;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 0.4fr 1fr;
-    text-transform: capitalize;
-    text-align: left;
-    img {
-      max-width: 5rem;
-      height: 5rem;
-      object-fit: contain;
-      color: transparent;
-    }
-
-    .color-div {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 1rem;
-
-      .color-style {
-        width: 1.4rem;
-        height: 1.4rem;
-
-        border-radius: 50%;
-      }
-    }
-  }
-
-  .cart-two-button {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-
-    .btn-clear {
-      background-color: #e74c3c;
-    }
-  }
-
-  .amount-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.4rem;
-    font-size: 1.4rem;
-
-    button {
-      border: none;
-      background-color: #fff;
-      cursor: pointer;
-    }
-
-    .amount-style {
-      font-size: 2.4rem;
-      color: ${({ theme }) => theme.colors.btn};
-    }
-  }
-
-  .remove_icon {
-    font-size: 1.6rem;
-    color: #e74c3c;
-    cursor: pointer;
-  }
-
-  .order-total--amount {
-    width: 100%;
-    margin: 4.8rem 0;
-    text-transform: capitalize;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    .order-total--subdata {
-      border: 0.1rem solid #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-      padding: 3.2rem;
-    }
-    div {
-      display: flex;
-      gap: 3.2rem;
-      justify-content: space-between;
-    }
-
-    div:last-child {
-      background-color: #fafafa;
-    }
-
-    div p:last-child {
-      font-weight: bold;
-      color: ${({ theme }) => theme.colors.heading};
-    }
-  }
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    .grid-five-column {
-      grid-template-columns: 1.5fr 1fr 0.5fr;
-    }
-    .cart-hide {
-      display: none;
-    }
-
-    .cart-two-button {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 2.2rem;
-    }
-
-    .order-total--amount {
-      width: 100%;
-      text-transform: capitalize;
-      justify-content: flex-start;
-      align-items: flex-start;
-
-      .order-total--subdata {
-        width: 100%;
-        border: 0.1rem solid #f0f0f0;
-        display: flex;
-        flex-direction: column;
-        gap: 1.8rem;
-        padding: 3.2rem;
-      }
-    }
-  }
-`;
 
 export default Cart;

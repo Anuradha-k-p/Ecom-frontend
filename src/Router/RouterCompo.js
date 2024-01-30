@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import {BrowserRouter,Routes,Route, NavLink} from "react-router-dom";
 import Home from '../Component/Home';
-import StoreCp from '../Component/Store';
+//import StoreCp from '../Component/Grocery';
 import Iphone from '../Component/Iphone';
-import Ipad from '../Component/Ipad';
-import Macbook from '../Component/Macbook';
+//import Ipad from '../Component/Ipad';
+//import Macbook from '../Component/Macbook';
+import Men from '../Component/Men';
+//import Women from '../Component/Women';
 import Accesories from '../Component/Accesories';
 import Dynamic from './Dynamic';
 import Error from '../Component/Error';
 import "./style.css"
 import Footer from '../Component/Footer';
 import ContextApi from '../CantextData/Data';
+import Women from '../Component/Women';
+import Grocery from '../Component/Grocery';
+import Cart from '../Component/Cart';
+//import Header from '../Component/Header';
 // import { CgMenu } from "react-icons/cg";
 // import { CgClose } from "react-icons/cg";
 
@@ -44,10 +50,10 @@ const RouterCompo = () => {
       <div className={menuOpen ? 'menu open' : 'menu'}>
        
         <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/">HOME</NavLink>
-        <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/store">STORE</NavLink>
+        <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/grocery">GROCERY</NavLink>
          <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/iphone">IPHONE</NavLink>
-        <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/ipad">IPAD</NavLink>
-       <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/macbook">MACBOOK</NavLink>
+        <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/men">MEN</NavLink>
+       <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/women">WOMEN</NavLink>
        <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/accesories">ACCESORIES</NavLink>
 
 
@@ -91,18 +97,19 @@ const RouterCompo = () => {
         </div>
         <CgClose  name='close-outline' className='mobile-nav-icon close-outline'/>
         */}
-
+ 
 <ContextApi>
 
         <Routes>
            <Route path='/' element={<Home/>}/>
-           <Route path='/store' element={<StoreCp/>}/>
+           <Route path='/grocery' element={<Grocery/>}/>
            <Route path='/iphone' element={<Iphone/>}/>
-           <Route path='/ipad' element={<Ipad/>}/>
-           <Route path='/macbook' element={<Macbook/>}/>
+           <Route path='/men' element={<Men/>}/>
+           <Route path='/women' element={<Women/>}/>
            <Route path='/accesories' element={<Accesories/>}/>
            <Route path='/dynamic/:id' element={<Dynamic/>}/>
            <Route path='*' element={<Error/>}/>
+           <Route path='cart' element={<Cart/>}/>
 
 
         </Routes>

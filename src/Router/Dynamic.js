@@ -1,98 +1,108 @@
-// import React from 'react';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { Store } from '../CantextData/Data';
+import { useContext } from 'react';
 
-// const Dynamic = () => {
-//     return(
-//         <>
-        
-//         </>
-//     );
-// }
+const Dynamic = () => {
+  const{id} =useParams();
+  const [received] = useContext(Store);
+  
+  return(
+    <>
+     <div>
+            {
+                received.filter((item)=>item.id===id).map((item,index)=>{
+                  // const {
+                  //   id = item.id,
+                  //   image = item.image,
+                  //   price = (item.price),
+                  //   model = item.model,
+                  //   quantity = (item.quantity),
+                  // } = item;
+                  return(
+                
+                    <div className="single-container" key={index}>
+                    {/* <div  className="single-leftsidediv">
+                      <img src={item.image} alt="Not Found" />
+                    </div>
+                    <div className="single-rightsidediv">
+                        <div className="single-rightsideinnerdiv">
+                      <h2 className="single-modelName">{item.name}</h2>
+                      <hr></hr>
+                      <h2 className="single-Price-of-All">Deals Of The Day:  {item.price}</h2>
+      
+                      <h2>Specifications:</h2>
+                      <ul>
+                        <li>
+                          <p className="single-detailpada-p">Brand:  {item.brand}</p>
+                        </li>
+                        <li>
+                          <p className="single-detailpada-p">Type:{item.type}</p>
+                        </li>
+                        <li>
+                          <p className="single-detailpada-p">Color:{item.color}</p>
+                        </li>
+                        <li>
+                          <p className="single-detailpada-p">Category:{item.category}</p>
+                        </li>
+                       
+                      </ul>
+                      
+                      </div> */}
+                      {/* <button className="single-buttonforAll" onClick={() =>
+                      dispatch(addtoCart({ id, image, price, quantity, model }))
+                    } > */}
+                    <div>
+                    <div  className="single-leftsidediv">
+                      <img src={item.image} alt="Not Found" />
+                    </div>
+                    <h2 className="single-modelName">{item.name}</h2>
+
+                    <h2 className="single-Price-of-All">Deals Of The Day:  {item.price}</h2>
+
+
+                    <h2>Specifications:</h2>
+                      <ul>
+                        <li>
+                          <p className="single-detailpada-p">Brand:  {item.brand}</p>
+                        </li>
+                        <li>
+                          <p className="single-detailpada-p">Type:{item.type}</p>
+                        </li>
+                        <li>
+                          <p className="single-detailpada-p">Color:{item.color}</p>
+                        </li>
+                        <li>
+                          <p className="single-detailpada-p">Category:{item.category}</p>
+                        </li>
+                       
+                      </ul>
+
+
+                    </div>
 
 
 
-// export default Dynamic;
 
 
-import styled from "styled-components";
+                    <button>
+                       Buy Now
+                      </button>
+                     </div>
+                      
+                     
+                    
+                 
+                    )
+                })
+            }
+        </div>
 
-
-const Dynamic =()=>{
-
-  return <Wrapper></Wrapper>;
+    
+    </>
+  )
 }
 
 
-const Wrapper = styled.section`
-  .container {
-    padding: 9rem 0;
-  }
-  .product-data {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2rem;
-
-    .product-data-warranty {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 1rem;
-
-      .product-warranty-data {
-        text-align: center;
-
-        .warranty-icon {
-          background-color: rgba(220, 220, 220, 0.5);
-          border-radius: 50%;
-          width: 4rem;
-          height: 4rem;
-          padding: 0.6rem;
-        }
-        p {
-          font-size: 1.4rem;
-          padding-top: 0.4rem;
-        }
-      }
-    }
-
-    .product-data-price {
-      font-weight: bold;
-    }
-    .product-data-real-price {
-      color: ${({ theme }) => theme.colors.btn};
-    }
-    .product-data-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      font-size: 1.8rem;
-
-      span {
-        font-weight: bold;
-      }
-    }
-
-    hr {
-      max-width: 100%;
-      width: 90%;
-      /* height: 0.2rem; */
-      border: 0.1rem solid #000;
-      color: red;
-    }
-  }
-
-  .product-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    padding: 0 2.4rem;
-  }
-`;
 
 export default Dynamic;

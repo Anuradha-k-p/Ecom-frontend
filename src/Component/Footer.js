@@ -43,11 +43,11 @@ const Footer = () => {
             </div>
             <div className='footer-social'>
                 <h3>Follow Us</h3>
-                <div>
-                <SiGmail />
-                <FaTwitter />
-                <ImFacebook2 />
-                <FaInstagram />
+                <div className='follow'>
+                <SiGmail className='follow-child'/>
+                <FaTwitter className='follow-child' />
+                <ImFacebook2 className='follow-child'/>
+                <FaInstagram className='follow-child'/>
                 </div>
 
             </div>
