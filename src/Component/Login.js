@@ -13,12 +13,12 @@ const Login = () => {
 
     try {
 
-      const response = axios.post('https://node4-f4bv.onrender.com/pages/login', { email, password })
+      const response = axios.post('http://localhost:5050/api/login', { email, password })
         .then((res) => {
           console.log(res.data, "User Login Data")
           if (res.data.msg === "Login successful!!") {
             console.log("login success")
-            navi('/dashboard')
+            // navi('/dashboard')
             localStorage.setItem("token", res.data.token)
           }
           if (res.data.msg === "Oppss...😿😿 try again...") {

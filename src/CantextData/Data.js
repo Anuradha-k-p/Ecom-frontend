@@ -12,7 +12,8 @@ const ContextApi=(props)=>{
   useEffect(()=>{
     const fetchdata =async()=>{
       try{
-        const response = await axios.get('http://localhost:5050/api/ecom');
+         const response = await axios.get('http://localhost:5050/api/ecom');
+       // const response = await axios.get('http://localhost:4001/api/global');
         setData(response.data);
       }
       catch(err){

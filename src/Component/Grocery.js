@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { Store } from '../CantextData/Data';
+import { NavLink } from 'react-router-dom';
+import { FaShareFromSquare } from "react-icons/fa6";
 
 const Grocery = () => {
     const [received] =useContext(Store);
@@ -23,10 +25,20 @@ const Grocery = () => {
                
                 />
                 <div id="Description2">
-                <h2>{item.model}</h2>
-                  {/* <p>{item.Description.slice(0,110)+"..."}</p> */}
+                  <h3>{item.model}</h3>
+                  <h3 style={{color:"green"}}>{item.price} RS</h3>
                 </div>
-                {/* </NavLink> */}
+
+
+                <NavLink to={`/dynamic/${item.id}`}>
+                  <div className="hidden-paragraph">
+                     <button className='add-but'>ADD TO CART</button>
+                     <p><FaShareFromSquare /></p>
+                  </div>
+                </NavLink>
+
+                
+
               </div>
             );
           })}

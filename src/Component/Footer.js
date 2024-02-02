@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from './../Contact';
+//import Contact from './../Contact';
 import { NavLink } from 'react-router-dom';
 import "./Compo.css"
 import { SiGmail } from "react-icons/si";
@@ -18,11 +18,11 @@ const Footer = () => {
                     <h3> Talk To us Today</h3>
                     
                 </div>
-                <div>
+                
                     <button >
                         <NavLink to='/' className='footer-but'> Get Started</NavLink>
                     </button>
-                </div>
+               
 
             </div>
 
@@ -30,9 +30,11 @@ const Footer = () => {
         </div>
         <footer>
             <div className='footer-about'>
-                <h3>ecom</h3>
-                <p>Lore.................
+                <h3>CHOICE</h3>
+                <p>If you can dream it,<br/>
+                   we can do it. 
                 </p>
+                <p>@{ new Date().getFullYear()}Choice Inc.   All rights Reserved. </p>
 
             </div>
             <div className='footer-subscribe'>
@@ -52,10 +54,10 @@ const Footer = () => {
 
             </div>
         </footer>
-        <hr/>
+{/*        
         <div>
-            <p>@{ new Date().getFullYear()}mmmmmmmm . All rights Reserved</p>
-        </div>
+            <p style={{backgroundColor:"rgb(41, 40, 40)",color:"white"}}>@{ new Date().getFullYear()}Choice Inc.   All rights Reserved.              | Privacy Policy | Terms of Use  | Sales Policy | Legal | Map </p>
+        </div> */}
         
         </>
     );

@@ -3,6 +3,7 @@ import React from 'react';
 const Mobile = () => {
     return(
         <>
+<h1></h1>
         
 <div className='letest'>
 

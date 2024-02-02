@@ -4,7 +4,9 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
 
+
 const Header = () => {
+    // const navigate =useNavigate();
     return(
         <>
         <div className='head'>
@@ -18,18 +20,23 @@ const Header = () => {
             </div>
             <div className='cart'>
             {/* <PiShoppingCartSimpleLight /> */}
-            {/* <NavLink to='/cart'>
-            </NavLink> */}
+            <NavLink to='/cart'>
+
             <FaCartArrowDown  className='cart'/>
+            </NavLink>
 
 
 
 
             </div>
             <div className='login'>
-                <button>
-                    LOGIN
+                <NavLink to='/register'>
+           
+                <button className='regi'>
+                    REGISTER
                 </button>
+                </NavLink>
+            
 
             </div>
 

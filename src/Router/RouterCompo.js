@@ -16,6 +16,9 @@ import ContextApi from '../CantextData/Data';
 import Women from '../Component/Women';
 import Grocery from '../Component/Grocery';
 import Cart from '../Component/Cart';
+import Login from '../Component/Login';
+import Register from '../Component/Register';
+import Laptop from '../Component/Laptop';
 //import Header from '../Component/Header';
 // import { CgMenu } from "react-icons/cg";
 // import { CgClose } from "react-icons/cg";
@@ -38,7 +41,7 @@ const RouterCompo = () => {
 
     return(
         <>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
 
         <div className="hamburger-menu">
       <div className="hamburger-icon" onClick={toggleMenu}>
@@ -51,7 +54,8 @@ const RouterCompo = () => {
        
         <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/">HOME</NavLink>
         <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/grocery">GROCERY</NavLink>
-         <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/iphone">IPHONE</NavLink>
+         <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/iphone">PHONE</NavLink>
+         <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/laptop">LAPTOP</NavLink>
         <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/men">MEN</NavLink>
        <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/women">WOMEN</NavLink>
        <NavLink onClick={closeMenu} style={({isActive})=>({color:(isActive)?"blue":"black"})} className="NavLink" to="/accesories">ACCESORIES</NavLink>
@@ -107,16 +111,19 @@ const RouterCompo = () => {
            <Route path='/men' element={<Men/>}/>
            <Route path='/women' element={<Women/>}/>
            <Route path='/accesories' element={<Accesories/>}/>
+           <Route path='/laptop' element={<Laptop/>}/>
            <Route path='/dynamic/:id' element={<Dynamic/>}/>
            <Route path='*' element={<Error/>}/>
            <Route path='cart' element={<Cart/>}/>
+           <Route path='/login' element={<Login/>}/>
+           <Route path='/register' element={<Register/>}/>
 
 
         </Routes>
 </ContextApi>
         <Footer/>
         
-        </BrowserRouter>
+        {/* </BrowserRouter> */}
         
         
         </>
