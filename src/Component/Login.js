@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,NavLink } from 'react-router-dom'
+
+
 
 
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
   const navi = useNavigate()
 
   const handleLogin = () => {
@@ -35,6 +38,9 @@ const Login = () => {
 
   return (
     <div className='nav'>
+      <div className='middle'>
+
+  
       <label>Email: </label><br />
       <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} required id="myInput" /><br />
 
@@ -42,10 +48,24 @@ const Login = () => {
       <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
       <br />
       <br />
-      <button onClick={handleLogin}>LogIn</button>
+      <button onClick={handleLogin} className='reg-but'>LogIn</button>
+      
+      <div>
+
+
+      
+
+      <NavLink to="/register" className="nextpage">
+         Haven't account please Register first
+      </NavLink>
+      </div>
+      </div>
+
 
     </div>
   )
 }
 
 export default Login
+
+

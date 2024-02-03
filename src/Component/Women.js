@@ -9,10 +9,11 @@ const Women
    
     return(
         <>
+        <div className='new'>
 
         <video controls autoPlay muted src='https://media.istockphoto.com/id/1316773371/video/shopping-clothing-store-interior-modern-fashionable-shop-clothes-for-every-taste-stylish.mp4?s=mp4-640x640-is&k=20&c=1XHLA4eNvH0OpngnL0tqQpNDGtQOWFxIl5adl8JipOE='className='first'/>
 
- 
+       </div>
 <div className='letest'>
 
 {/* {received.filter((item) =>  item.id >= 130 && item.id <= 133 && item.category === "home"  ) */}
@@ -32,10 +33,11 @@ const Women
                 </div>
 
 
+              
                 <NavLink to={`/dynamic/${item.id}`}>
                   <div className="hidden-paragraph">
-                     <button className='add-but'>ADD TO CART</button>
-                     <p><FaShareFromSquare /></p>
+                     <button className='add-but'>SHOW PRODUCT</button>
+                     <p><FaShareFromSquare className="share"/></p>
                   </div>
                 </NavLink>
 

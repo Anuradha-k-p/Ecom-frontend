@@ -6,7 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 //import ErrorBoundary from './ErrorBoundry';
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import Store from "./Redux/Store";
+import {Store} from "./Redux/Store";
+//import Store from "./Redux/Store";
+// import Store from "./Redux/Store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

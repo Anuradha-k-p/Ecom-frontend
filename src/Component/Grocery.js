@@ -8,7 +8,10 @@ const Grocery = () => {
   
     return(
         <>
+        <div className='new'>
+
         <video controls autoPlay muted src='https://media.istockphoto.com/id/1448313519/video/supermarket-shopping-and-groceries-speed-walking-for-stock-market-sale-discount-or-promotion.mp4?s=mp4-640x640-is&k=20&c=27-cBLXd76FSSrgeE6ciCHibQtBN31NswxGyeoJVSds=' className='first'/> 
+        </div>
 
         
 <div className='letest'>
@@ -32,8 +35,8 @@ const Grocery = () => {
 
                 <NavLink to={`/dynamic/${item.id}`}>
                   <div className="hidden-paragraph">
-                     <button className='add-but'>ADD TO CART</button>
-                     <p><FaShareFromSquare /></p>
+                     <button className='add-but'>SHOW PRODUCT</button>
+                     <p><FaShareFromSquare className="share"/></p>
                   </div>
                 </NavLink>
 

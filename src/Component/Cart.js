@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../Redux/Slicing";
-// import "./Cart.css"
+import "./Cart.css"
 import {loadStripe} from "@stripe/stripe-js"
 
 
@@ -117,3 +117,5 @@ const makePayment=async ()=>{
 };
 
 export default Cart;
+
+

@@ -1,6 +1,7 @@
 import React from 'react';
 // import { PiShoppingCartSimpleLight } from "react-icons/pi";
 import { FaCartArrowDown } from "react-icons/fa";
+import { MdPerson } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 
 
@@ -11,30 +12,38 @@ const Header = () => {
         <>
         <div className='head'>
             <div className='logo'>
-                <p>CHOICE</p>
+                <p className='lg'>CHOICE</p>
 
             </div>
             <div className='search-input'>
                 <input type='text' placeholder='go with choce.........'/>
 
             </div>
-            <div className='cart'>
+            {/* <div className='cart'> */}
             {/* <PiShoppingCartSimpleLight /> */}
-            <NavLink to='/cart'>
+            {/* <NavLink to='/cart'>
 
             <FaCartArrowDown  className='cart'/>
-            </NavLink>
+            </NavLink> */}
 
 
 
 
-            </div>
+            {/* </div> */}
             <div className='login'>
-                <NavLink to='/register'>
+            <NavLink to='/cart'>
+
+<FaCartArrowDown  className='cart'/>
+</NavLink>
+
+
+
+                <NavLink to='/login'>
            
-                <button className='regi'>
-                    REGISTER
-                </button>
+                {/* <button className='regi'>
+                    LOGIN
+                </button> */}
+                <MdPerson  className='cart'/>
                 </NavLink>
             
 

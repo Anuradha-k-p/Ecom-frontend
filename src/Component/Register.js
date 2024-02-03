@@ -4,6 +4,9 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import "./Compo.css"
+import { FaGoogle } from "react-icons/fa";
+import { SiGooglechrome } from "react-icons/si";
+import { SiGmail } from "react-icons/si";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -98,7 +101,7 @@ const Register = () => {
 <label>Phone Number :   </label>
 <input type='email' value={phone} onChange={(e) => setPhone(e.target.value)} />
 </div>
-
+<div>
         <button onClick={handleregister} className='reg-but'>Register Your Account</button>
         {/* <div className='remeber'> */}
 
@@ -107,13 +110,13 @@ const Register = () => {
 
         <p>Forgot Password</p>
 
-        {/* </div> */}
+        </div>
         <p>-Or Sign In With-</p>
         <div className='signin'>
 
-          <p>google</p>
-          <p>google</p>
-          <p>google</p>
+          <p><FaGoogle className='social'/></p>
+          <p><SiGooglechrome className='social'/></p>
+          <p><SiGmail className='social'/></p>
 
 
 

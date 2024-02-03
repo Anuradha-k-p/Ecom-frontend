@@ -33,11 +33,10 @@ const Accesories = () => {
 
                 <NavLink to={`/dynamic/${item.id}`}>
                   <div className="hidden-paragraph">
-                     <button className='add-but'>ADD TO CART</button>
-                     <p><FaShareFromSquare /></p>
+                     <button className='add-but'>SHOW PRODUCT</button>
+                     <p><FaShareFromSquare className="share"/></p>
                   </div>
                 </NavLink>
-
                 
               </div>
 

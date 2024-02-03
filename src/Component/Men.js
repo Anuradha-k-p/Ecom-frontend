@@ -8,8 +8,9 @@ const Men = () => {
  
     return(
         <>
+        <div className='new'>
         <video controls autoPlay muted src='https://media.istockphoto.com/id/1328244639/video/happy-sweet-boy-shopping-with-his-dad-at-the-mall-each-carrying-bags-while-talking-cheerfully.mp4?s=mp4-640x640-is&k=20&c=WSpZYZg8QZuxzBSsUtYJYz9FiQ3RLLc0ELn3eQEQwjs='className='first'/>
-
+          </div>
         <div className='letest'>
 
 {/* {received.filter((item) =>  item.id >= 130 && item.id <= 133 && item.category === "home"  ) */}
@@ -32,8 +33,8 @@ const Men = () => {
 
                 <NavLink to={`/dynamic/${item.id}`}>
                   <div className="hidden-paragraph">
-                     <button className='add-but'>ADD TO CART</button>
-                     <p><FaShareFromSquare /></p>
+                     <button className='add-but'>SHOW PRODUCT</button>
+                     <p><FaShareFromSquare className="share"/></p>
                   </div>
                 </NavLink>
 

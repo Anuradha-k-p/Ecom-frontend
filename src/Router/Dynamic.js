@@ -1,11 +1,17 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { Store } from '../CantextData/Data';
 import { useContext } from 'react';
+import { useDispatch } from 'react-redux';
+import {  addtoCart } from '../Redux/Slicing';
 
 const Dynamic = () => {
   const{id} =useParams();
   const [received] = useContext(Store);
+
+  const Dispatch = useDispatch();
+
+
   
   return(
     <>
@@ -130,27 +136,17 @@ const Dynamic = () => {
       <p class="product-description"><b>Important Note</b>To register this product for the warranty, the customer has to visit www.choices.com and mention the 'Internet Purchase' option and then select the 'CHOICE' option on the drop-down. While availing the warranty, they need to call the toll-free number that's on www.choices.com. The product has to be registered if the user wants to claim the warranty.</p>
 
       <p class="product-price">Price : {item.price}Rs.</p>
-      <button class="add-to-cart-btn">Add to Cart</button>
+      <NavLink to='/cart'>   
+         {/* <button class="add-to-cart-btn" onClick={()=>Dispatch(AddCart(item))}>Add to Cart</button> */}
+         <button class="add-to-cart-btn" onClick={()=>Dispatch(addtoCart(item))}>Add to Cart</button>
+
+</NavLink>
     </div>
   </div>
 
 
 
-
-
-
-
-
-
-
-                     </div>
-
-
-
-
-                    
-                      
-                     
+                     </div>   
                     
                  
                     )

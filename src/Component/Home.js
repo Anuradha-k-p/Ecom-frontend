@@ -11,10 +11,16 @@ import { RiRecycleFill } from "react-icons/ri";
 // import { TbReplaceFilled } from "react-icons/tb";
 import { TbReplace } from "react-icons/tb";
 import { FaShareFromSquare } from "react-icons/fa6";
+// import { useDispatch } from 'react-redux';
+// import { AddCart } from '../Redux/Slicing';
 
 const Home = () => {
     const [received] =useContext(Store);
     console.log(received)
+
+  //  const Dispatch = useDispatch();
+
+
     return(
         <>
         <div className='vedio'>
@@ -22,6 +28,8 @@ const Home = () => {
             <h1 className='para'>Get it today.<br/> Buy online and we’ll have<br/> it ready for pickup.</h1>
         </div>
 
+
+<h1></h1>
 
 <div className='letest'>
 
@@ -46,7 +54,7 @@ const Home = () => {
 
                 <NavLink to={`/dynamic/${item.id}`}>
                   <div className="hidden-paragraph">
-                     <button className='add-but'>ADD TO CART</button>
+                     <button className='add-but'>SHOW PRODUCT</button>
                      <p><FaShareFromSquare className="share"/></p>
                   </div>
                 </NavLink>

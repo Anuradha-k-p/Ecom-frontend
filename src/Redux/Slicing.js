@@ -3,6 +3,8 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+//import { createSlice } from "@reduxjs/toolkit";
+
 
 const AddtoCart = createSlice({
   name: "Cart",
@@ -65,3 +67,37 @@ console.log(res.data)
 export default AddtoCart.reducer;
 export const { addtoCart, RemoveItem, IncreaseQuantity, DecreaseQuantity } =
   AddtoCart.actions;
+
+
+
+
+
+// const initialState = {
+//   Cart:[],
+//   Quantity:0
+// }
+
+// const CartSlice = createSlice({
+//   name: "Cart",
+//   initialState,
+//   reducers:{
+//       AddCart:(state,action)=>{
+//         const find = state.Cart.findIndex(item=>item.id===action.payload.id)
+//         if(find>=0){
+
+//           state.Cart[find].Quantity+=1
+//         }
+
+//         else{
+
+        
+//         const tempvar = {...action.payload,Quantity:1}
+//         state.Cart.push(tempvar)
+//         }
+//       }
+//   }
+// })
+
+
+// export const {AddCart} =CartSlice.actions;
+// export default CartSlice.reducer;
