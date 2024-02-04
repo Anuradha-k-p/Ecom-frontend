@@ -18,13 +18,13 @@ const Dynamic = () => {
      <div>
             {
                 received.filter((item)=>item.id===id).map((item,index)=>{
-                  const {
-                    id = item.id,
-                    image = item.image,
-                    price = (item.price),
-                    model = item.model,
-                    quantity = (item.quantity),
-                  } = item;
+                  // const {
+                  //   id = item.id,
+                  //   image = item.image,
+                  //   price = (item.price),
+                  //   model = item.model,
+                  //   quantity = (item.quantity),
+                  // } = item;
                   return(
                 
                      <div className="single-container" key={index}>

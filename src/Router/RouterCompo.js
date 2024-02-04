@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {BrowserRouter,Routes,Route, NavLink} from "react-router-dom";
+import {Routes,Route, NavLink} from "react-router-dom";
 import Home from '../Component/Home';
 //import StoreCp from '../Component/Grocery';
 import Iphone from '../Component/Iphone';
