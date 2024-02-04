@@ -13,8 +13,8 @@ const Laptop = () => {
 
 <video controls autoPlay muted src='https://media.istockphoto.com/id/1454425463/video/man-opening-laptop-and-starting-to-work-close-up.mp4?s=mp4-640x640-is&k=20&c=d8rNNMl459OYsHe8NbVSplwhklg_Dstk6PSIGXZ4yAc=' className='first'/> 
 </div>
-
-<h1>HP LAPTOP</h1>
+<h1 className='gr-hd'>GRAB OR GONE</h1>
+<h4>HP LAPTOP</h4>
         
 <div className='letest'>
 

@@ -19,7 +19,8 @@ const Register = () => {
 
   const handleregister = () => {
     try {
-      const response = axios.post('http://localhost:5050/api/register', { email, password })
+      // const response = axios.post('http://localhost:5050/api/register', { email, password })
+      const response = axios.post('https://e-back-5zf8.onrender.com/api/register', { email, password })
         .then((res) => {
           console.log(res.data, "User Registered Data")
           if (res.data.msg === "email Already exist") {
@@ -130,3 +131,12 @@ const Register = () => {
 
 }
 export default Register
+
+
+
+
+
+
+
+
+

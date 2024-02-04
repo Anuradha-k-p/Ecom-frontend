@@ -13,6 +13,8 @@ const Grocery = () => {
         <video controls autoPlay muted src='https://media.istockphoto.com/id/1448313519/video/supermarket-shopping-and-groceries-speed-walking-for-stock-market-sale-discount-or-promotion.mp4?s=mp4-640x640-is&k=20&c=27-cBLXd76FSSrgeE6ciCHibQtBN31NswxGyeoJVSds=' className='first'/> 
         </div>
 
+        <h1 className='gr-hd'>ON EVERBODY'S LIST</h1>
+
         
 <div className='letest'>
 

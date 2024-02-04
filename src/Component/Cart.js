@@ -15,32 +15,32 @@ const Cart = () => {
   const total = data.reduce((cur, item) => {
     return (cur) +item.price *(item.quantity);
   }, 0);
-const makePayment=async ()=>{
+// const makePayment=async ()=>{
   
-    const stripe =await loadStripe("pk_test_51OFIp6SASTZsWUYjTKRxcD4xTAidUAj7os1f9uqt5pfPPcWFOaV5pmYsZVUUbpkehNtOXKX8vwRwVLdmUZfTWMfM00o8bJqo5J")
+//     const stripe =await loadStripe("pk_test_51OFIp6SASTZsWUYjTKRxcD4xTAidUAj7os1f9uqt5pfPPcWFOaV5pmYsZVUUbpkehNtOXKX8vwRwVLdmUZfTWMfM00o8bJqo5J")
   
-    const body ={
-      products:data
-    }
-    console.log(body)
-    const headers={
-      "Content-Type":"application/json"
-    }
-    const response = await fetch("https://ecommerce-backend-new.onrender.com/checkout",{
-            method:"POST",
-            headers:headers,
-            body:JSON.stringify(body)
-    })
-    const session= await response.json();
+//     const body ={
+//       products:data
+//     }
+//     console.log(body)
+//     const headers={
+//       "Content-Type":"application/json"
+//     }
+//     const response = await fetch("https://ecommerce-backend-new.onrender.com/checkout",{
+//             method:"POST",
+//             headers:headers,
+//             body:JSON.stringify(body)
+//     })
+//     const session= await response.json();
   
-    const result =stripe.redirectToCheckout({
-      sessionId:session.id
-    })
-    if(result.error){
-      console.log(result.error)
+//     const result =stripe.redirectToCheckout({
+//       sessionId:session.id
+//     })
+//     if(result.error){
+//       console.log(result.error)
     
-   }
-}
+//    }
+// }
 
 
   const handleIncreaseQuantity = (id) => {
@@ -108,7 +108,9 @@ const makePayment=async ()=>{
 
         <div className="buy">
         {/* <NavLink to="/success" state={data}> */}
-          <button onClick={makePayment}>Buy Now</button>
+          {/* <button onClick={makePayment}>Buy Now</button> */}
+          <button>Buy Now</button>
+
           {/* </NavLink> */}
         </div>
       </div>

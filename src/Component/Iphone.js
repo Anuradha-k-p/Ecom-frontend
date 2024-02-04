@@ -12,7 +12,10 @@ const Iphone = () => {
 <div className='new'>
    <video controls autoPlay muted src='https://media.istockphoto.com/id/1472333926/video/low-connection-and-business-people-with-phone-for-bluetooth-social-media-and-communication.mp4?s=mp4-640x640-is&k=20&c=OTVT5F1MKzNot6hRutx2Zz7ZhhYQW4jhjDdOB8I2Q4c=' className='first'/>
 </div>
-        <h1>Iphone</h1>
+
+<h1 className='pn-hd'> SPOTLIGHT ON</h1>
+
+        <h3>Iphone</h3>
         
 <div className='letest'>
 

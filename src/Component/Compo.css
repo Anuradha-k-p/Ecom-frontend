@@ -2,6 +2,33 @@
 
 /* -----------FOOTER------------ */
 
+h1{
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  text-align: center;
+  width: 100%;
+
+
+}
+h1:hover{
+  color: #691a43; 
+  /* transform: scale(1.1); */
+
+ 
+}
+.hm-hd{
+  background-image: linear-gradient(to left,rgba(114, 114, 250,0), rgb(183, 100, 143),rgba(114, 114, 250,0));
+}
+
+.gr-hd{
+  background-image: linear-gradient(to left,rgba(114, 114, 250,0), rgb(65, 99, 125),rgba(114, 114, 250,0));
+}
+
+.pn-hd{
+  background-image: linear-gradient(to left,rgba(114, 114, 250,0), rgb(240, 151, 43),rgba(114, 114, 250,0));
+}
+
+
+
 
 .grid{
     height: 14vh;

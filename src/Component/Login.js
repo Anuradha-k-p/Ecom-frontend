@@ -16,7 +16,8 @@ const Login = () => {
 
     try {
 
-      const response = axios.post('http://localhost:5050/api/login', { email, password })
+      // const response = axios.post('http://localhost:5050/api/login', { email, password })
+      const response = axios.post('https://e-back-5zf8.onrender.com/api/login', { email, password })
         .then((res) => {
           console.log(res.data, "User Login Data")
           if (res.data.msg === "Login successful!!") {
@@ -25,7 +26,7 @@ const Login = () => {
             localStorage.setItem("token", res.data.token)
           }
           if (res.data.msg === "Oppss...😿😿 try again...") {
-            alert("you Haven't Registered Yet")
+            alert("Register please............")
             navi('/register')
           }
         })
@@ -67,5 +68,6 @@ const Login = () => {
 }
 
 export default Login
+
 
 

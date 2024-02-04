@@ -29,7 +29,7 @@ const Home = () => {
         </div>
 
 
-<h1></h1>
+<h1 className='hm-hd'>POPULAR PICKS</h1>
 
 <div className='letest'>
 
